@@ -1,5 +1,4 @@
-text = input("Введите текст: ")
-text = text.lower()
+text = input("Введите текст: ").lower()
 
 for symbol in ".,!?;:()\"'":
     text = text.replace(symbol, "")
@@ -25,8 +24,8 @@ else:
 vowels = "аеёиоуыэюя"
 vowel_count = 0
 
-for symbol in text:
-    if symbol in vowels:
+for letter in text:
+    if letter in vowels:
         vowel_count += 1
 
 print("Количество гласных:", vowel_count)

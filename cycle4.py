@@ -1,26 +1,22 @@
-# Задание 1. Сумма всех чётных чисел от 1 до 100
-total = 0
+def sum_numbers():
+    total = 0
 
-for i in range(1, 101):
-    if i % 2 == 0:
-        total += i
+    for i in range(1, 101):
+        if i % 2 == 0:
+            total += i
 
-print("Сумма чётных чисел:", total)
+    print("Сумма чётных чисел:", total)
 
-# Задание 2. Квадраты всех нечётных чисел от 1 до 10
-squares = [i ** 2 for i in range(1, 11) if i % 2 != 0]
+def squares_numbers():
+    squares = [i ** 2 for i in range(1, 11) if i % 2 != 0]
+    print("Квадраты нечётных чисел:", squares)
 
-print("Квадраты нечётных чисел:", squares)
+def input_numbers():
+    count = 0
+    number = 0
 
-# Задание 3. Ввод чисел до появления отрицательного
-count = 0
+    while number >= 0:
+        number = int(input("Введите число: "))
+        count += 1
 
-while True:
-    number = int(input("Введите число: "))
-
-    if number < 0:
-        break
-
-    count += 1
-
-print("Количество введённых чисел:", count)
+    print("Количество введённых чисел:", count)
