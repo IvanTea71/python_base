@@ -1,10 +1,13 @@
-password = "python123"
-user_password = ""
+def input_password():
+    password = "python123"
+    user_password = ""
 
-while user_password != password:
-    user_password = input("Введите пароль: ")
+    while user_password != password:
+        user_password = input("Введите пароль: ")
 
-    if user_password == password:
-        print("Пароль верный! Доступ разрешён.")
-    else:
-        print("Неверный пароль. Попробуйте ещё раз.")
+        if user_password == password:
+            print("Пароль верный! Доступ разрешён.")
+        else:
+            print("Неверный пароль. Попробуйте ещё раз.")
+
+input_password()
