@@ -1,5 +1,8 @@
 def multiply(a, b):
+   try:
     return a * b
+   except:
+       print("Ошибка!")
 
-result = multiply(5, 3)
+result = multiply(2,2)
 print(result)

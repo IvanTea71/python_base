@@ -15,15 +15,12 @@ string6 = """Пример многострочной строки:
     Имя\tВозраст
     Иван\t25
 Это последняя строка."""
-print("1. Двойные кавычки:")
-print(string1)
-print("\n2. Одинарные кавычки:")
-print(string2)
-print("\n3. Обратный слэш:")
-print(string3)
-print("\n4. Новая строка:")
-print(string4)
-print("\n5. Табуляция:")
-print(string5)
-print("\n6. Многострочная строка:")
-print(string6)
+strings ={"1. Двойные кавычки:":string1,
+          "2. Одинарные кавычки:":string2,
+          "3. Обратный слэш:":string3,
+          "4. Новая строка:":string4,
+          "5. Табуляция:":string5,
+          "6. Многострочная строка:":string6}
+for key, value in strings.items():
+    print(key, "-", value)
+
