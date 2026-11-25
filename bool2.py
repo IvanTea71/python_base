@@ -1,14 +1,18 @@
-number = int(input("Введите число от 1 до 5: "))
+def print_number():
+    try:
+        age = int(input("Введите число от 1 до 5: ").strip())
+    except ValueError:
+        print("Ошибка: необходимо число!")
+        return
 
-if number == 1:
-    print("One")
-elif number == 2:
-    print("Two")
-elif number == 3:
-    print("Three")
-elif number == 4:
-    print("Four")
-elif number == 5:
-    print("Five")
-else:
-    print("Число должно быть от 1 до 5")
+    numbers = {1:"one",
+               2:"two",
+               3:"three",
+               4:"four",
+               5:"five"}
+
+    if age >= 1 and age <= 5:
+        print(numbers[age])
+
+
+print_number()
