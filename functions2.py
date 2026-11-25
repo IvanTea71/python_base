@@ -1,8 +1,7 @@
 def multiply(a, b):
-   try:
-    return a * b
-   except:
-       print("Ошибка!")
+   if type(a) in (int, float) and type(b) in (int, float):
+        return a * b
+
 
 result = multiply(2,2)
 print(result)

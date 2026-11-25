@@ -1,19 +1,19 @@
 def object_info(obj):
     try:
         length = len(obj)
-        obj_type = type(obj).__name__
-        return f"Объект: {obj}, Тип: {obj_type}, Длина: {length}"
-
     except TypeError:
+        length = "не определена"
+    finally:
         obj_type = type(obj).__name__
-        return f"Объект: {obj}, Тип: {obj_type}, Длина: не определена"
+        print(f"Объект: {obj}, Тип: {obj_type}, Длина: {length}")
 
-text = "Python"
-list = [1, 2, 3, 4, 5]
-tuple = (10, 20, 30)
-dict = {"name": "Ivan", "age": 25}
-int = 123
-objects = [text, list, tuple, dict, int]
 
-for i in objects:
-    print(object_info(i))
+my_text = "Python"
+my_list = [1, 2, 3, 4, 5]
+my_tuple = (10, 20, 30)
+my_dict = {"name": "Ivan", "age": 25}
+my_int = 123
+my_objects = [my_text, my_list, my_tuple, my_dict, my_int]
+
+for i in my_objects:
+    object_info(i)
