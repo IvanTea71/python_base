@@ -5,7 +5,11 @@ def print_number():
         print("Ошибка: необходимо число!")
         return
 
-    numbers = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
+    numbers = { 1: "one",
+                2: "two",
+                3: "three",
+                4: "four",
+                5: "five" }
 
     if age >= 1 and age <= 5:
         print(numbers[age])
