@@ -1,6 +1,6 @@
 def prepare_text(text):
     new_text = ""
-    symbols = ".,-!?;:()\"'"
+    symbols = ".,-!?;:()\"'[]{}<>@#$%^&*_+=~/\\|`—–…№«»„“”"
     text = text.lower()
 
     for letter in text:
@@ -29,7 +29,7 @@ def count_vowels(text):
     vowels = "аеёиоуыэюя"
     vowel_count = 0
 
-    for letter in text:
+    for letter in text.lower():
         if letter in vowels:
             vowel_count += 1
 
