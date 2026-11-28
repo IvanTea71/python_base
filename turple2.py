@@ -1,3 +1,13 @@
+def book_list_view(library):
+    if not library:
+        print("В библиотеке нет книг.")
+        return
+
+    print("Список книг в библиотеке:")
+
+    for book in library:
+        print(book)
+
 library = {
     "Мастер и Маргарита": {
         "author": "Михаил Булгаков",
@@ -15,16 +25,5 @@ library = {
         "available": True
     }
 }
-
-def book_list_view(library):
-    if not library:
-        print("В библиотеке нет книг.")
-        return
-
-    print("Список книг в библиотеке:")
-
-    for book in library:
-        print(book)
-
 
 book_list_view(library)

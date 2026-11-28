@@ -1,21 +1,3 @@
-library = {
-    "Мастер и Маргарита": {
-        "author": "Михаил Булгаков",
-        "year": 1967,
-        "available": True
-    },
-    "Преступление и наказание": {
-        "author": "Фёдор Достоевский",
-        "year": 1866,
-        "available": True
-    },
-    "Война и мир": {
-        "author": "Лев Толстой",
-        "year": 1869,
-        "available": True
-    }
-}
-
 def book_list_view(library):
     if not library:
         print("В библиотеке нет книг.")
@@ -87,4 +69,68 @@ def find_book(title):
     else:
         print(f"Книга \"{title}\" не найдена в библиотеке.")
 
-find_book("Война и мир")
+
+def show_menu():
+    print("\nМеню библиотеки:")
+
+    for number, item in menu.items():
+        print(f"{number}. {item[0]}")
+
+
+library = {
+    "Мастер и Маргарита": {
+        "author": "Михаил Булгаков",
+        "year": 1967,
+        "available": True
+    },
+    "Преступление и наказание": {
+        "author": "Фёдор Достоевский",
+        "year": 1866,
+        "available": True
+    },
+    "Война и мир": {
+        "author": "Лев Толстой",
+        "year": 1869,
+        "available": True
+    }
+}
+
+menu = {
+    1: ("Показать список книг", book_list_view),
+    2: ("Добавить книгу", add_book),
+    3: ("Удалить книгу", remove_book),
+    4: ("Выдать книгу", issue_book),
+    5: ("Вернуть книгу", return_book),
+    6: ("Найти книгу", find_book),
+    0: ("Выход", None)
+}
+
+while True:
+    show_menu()
+
+    try:
+        choice = int(input("Выберите пункт меню: "))
+
+        if choice not in menu:
+            print("Такого пункта меню нет.")
+            continue
+
+        elif choice == 0:
+            print("Программа завершена.")
+            break
+
+        elif choice == 1:
+            menu[choice][1](library)
+
+        elif choice == 2:
+            title = input("Введите название книги: ")
+            author = input("Введите автора: ")
+            year = int(input("Введите год издания: "))
+            menu[choice][1](title, author, year)
+
+        else:
+            title = input("Введите название книги: ")
+            menu[choice][1](title)
+
+    except ValueError:
+        print("Ошибка! Введите корректное числовое значение.")

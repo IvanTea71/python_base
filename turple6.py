@@ -28,23 +28,28 @@ def book_list_view(library):
 
 
 def add_book(title, author, year):
-    if title.lower() in library:
-        answer = input(f"Книга \"{title}\" уже существует. Обновить информацию? (да/нет): ")
+    book = library.get(title)
 
-        if answer.lower() == "да":
-            library[title]["author"] = author
-            library[title]["year"] = year
-            print(f"Информация о книге \"{title}\" успешно обновлена.")
-        else:
-            print("Обновление отменено.")
-
-    else:
+    if book is None:
         library[title] = {
             "author": author,
             "year": year,
             "available": None
         }
-        print(f"Книга \"{title}\" успешно добавлена.")
+        print(f'Книга "{title}" успешно добавлена.')
+        return
+
+    answer = input(
+        f'Книга "{title}" уже существует. Обновить информацию? (да/нет): '
+    )
+
+    if answer.lower() != "да":
+        print("Обновление отменено.")
+        return
+
+    book["author"] = author
+    book["year"] = year
+    print(f'Информация о книге "{title}" успешно обновлена.')
 
 
 def remove_book(title):
